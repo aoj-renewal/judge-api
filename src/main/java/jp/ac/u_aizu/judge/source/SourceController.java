@@ -24,8 +24,14 @@ public class SourceController {
     @ResponseBody
     public ResponseEntity<Iterable<Source>> findAll(
             @RequestParam(value = "page", required = false, defaultValue = "-1") int page,
-            @RequestParam(value = "size", required = false, defaultValue = "-1") int size
+            @RequestParam(value = "size", required = false, defaultValue = "-1") int size,
+            @RequestParam(value = "abbr", required = false, defaultValue = "") String abbr
     ) {
-        return ResponseEntity.ok(ResponseUtil.applyPager(sourceRepository, page, size));
+        if (abbr.isEmpty() == false) {
+            return ResponseEntity.ok(sourceRepository.findByAbbr(abbr));
+        } else {
+            return ResponseEntity.ok(ResponseUtil.applyPager(sourceRepository, page, size));
+        }
     }
+
 }
