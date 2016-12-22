@@ -34,6 +34,13 @@ public class AppController {
         );
     }
 
+    @RequestMapping(value = "/self", method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity<User> getSelfInformation() {
+        return sessionID.ifAuthenticated(self -> self);
+    }
+
+
     @RequestMapping(value = "/session", method = RequestMethod.DELETE)
     @ResponseBody
     public ResponseEntity<Void> logout() {
