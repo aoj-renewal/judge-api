@@ -23,8 +23,6 @@ public class ProblemController {
             @RequestParam(value = "page", required = false, defaultValue = "-1") int page,
             @RequestParam(value = "size", required = false, defaultValue = "-1") int size
     ) {
-        return sessionID.ifAuthenticated(ignore ->
-                ResponseUtil.applyPager(problemRepository, page, size)
-        );
+        return ResponseEntity.ok(ResponseUtil.applyPager(problemRepository, page, size));
     }
 }
