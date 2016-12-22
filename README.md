@@ -1,4 +1,4 @@
-# HelloSpringSession
+# JudgeAPI
 
 ## Build & Push Docker Image
 
@@ -11,8 +11,28 @@ $ ./gradlew build buildDocker
 
 ```
 $ cd [Your WorkSpace]
-$ git clone https://gist.github.com/97260bf3dcfb084b59975d4aca17a1f3.git spring-docker
-$ cd spring-docker
+$ git clone https://gist.github.com/ababup1192/c4ca7614e5c4345c4deec5447a75c29b judge-docker
+$ cd judge-docker
 $ docker-compose -d up web
-// Launch Application on ${docker ip}:8080
+// Launch Application on ${docker ip}:8090
+```
+
+## Launch App in Production's Environment
+```
+// tmux
+$ cd [YOUR WORKSPACE]
+// First time
+$ git clone http://ground.u-aizu.ac.jp:8080/git/AOJRenewal/judge-api.git
+$ cd  judge-api
+$ ./gradlew bootRun
+```
+
+## Modify and Launch
+```
+$ cd [judge-api project root]
+$ git pull
+// Stop Spring Server
+$ C-c
+$ ./gradlew bootRun
+$ systemctl restart nginx
 ```
