@@ -1,5 +1,6 @@
-package jp.ac.u_aizu.judge;
+package jp.ac.u_aizu.judge.auth;
 
+import jp.ac.u_aizu.judge.user.User;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.http.HttpStatus;

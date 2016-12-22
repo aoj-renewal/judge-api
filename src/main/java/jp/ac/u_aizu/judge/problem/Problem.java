@@ -1,4 +1,4 @@
-package jp.ac.u_aizu.judge;
+package jp.ac.u_aizu.judge.problem;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

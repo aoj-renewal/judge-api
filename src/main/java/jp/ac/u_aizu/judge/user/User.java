@@ -1,4 +1,4 @@
-package jp.ac.u_aizu.judge;
+package jp.ac.u_aizu.judge.user;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-class User {
+public class User {
     @Id
     private String id;
     @JsonIgnore

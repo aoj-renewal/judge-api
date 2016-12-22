@@ -1,4 +1,4 @@
-package jp.ac.u_aizu.judge;
+package jp.ac.u_aizu.judge.user;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
